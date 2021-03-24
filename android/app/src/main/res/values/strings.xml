@@ -8,4 +8,9 @@
     <string name="hintName">Nome</string>
     <string name="hintBalance">Saldo</string>
     <string name="btnConfirm">Confirmar</string>
+
+    <!-- Sign in -->
+    <string name="btnForgotPassword">Esqueceu a senha?</string>
+    <string name="btnSignIn">Entrar</string>
+    <string name="btnSignUp">Cadastrar-se</string>
 </resources>
