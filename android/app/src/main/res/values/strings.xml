@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Byte Bank</string>
+    <string name="content_description">content description</string>
+
+    <!-- Sign up -->
+    <string name="hintEmail">Email</string>
+    <string name="hintPassword">Senha</string>
+    <string name="hintName">Nome</string>
+    <string name="hintBalance">Saldo</string>
+    <string name="btnConfirm">Confirmar</string>
 </resources>
