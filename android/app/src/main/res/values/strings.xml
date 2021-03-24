@@ -13,4 +13,15 @@
     <string name="btnForgotPassword">Esqueceu a senha?</string>
     <string name="btnSignIn">Entrar</string>
     <string name="btnSignUp">Cadastrar-se</string>
+
+    <!-- Home -->
+    <string name="txtName">Visitante</string>
+    <string name="txtBalance">$ %1$.2f</string>
+    <string name="txtTitleBalance">Saldo</string>
+
+    <!-- Transaction items -->
+    <string name="txtValueTitle">Valor</string>
+    <string name="txtValue">$ %1$.2f</string>
+    <string name="txtNumberAccount">Nº da conta: %1d</string>
+    <string name="date">%1d-%2s-%3d</string>
 </resources>
