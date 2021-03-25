@@ -113,7 +113,7 @@
         tools:listitem="@layout/transactions_items" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
+        android:id="@+id/home_btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -129,5 +129,39 @@
         app:layout_constraintVertical_bias="1.0"
         app:maxImageSize="40dp"
         app:srcCompat="@drawable/ic_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/home_btnAddTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/content_description"
+        android:tintMode="multiply"
+        android:visibility="gone"
+        app:backgroundTint="@color/white"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/home_btnAdd"
+        app:layout_constraintEnd_toEndOf="@+id/home_btnAdd"
+        app:layout_constraintStart_toStartOf="@+id/home_btnAdd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_transaction" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/home_btnAddBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:tintMode="multiply"
+        android:visibility="gone"
+        app:backgroundTint="@color/white"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/home_btnAddTransaction"
+        app:layout_constraintEnd_toEndOf="@+id/home_btnAddTransaction"
+        app:layout_constraintStart_toStartOf="@+id/home_btnAddTransaction"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_add_balance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
