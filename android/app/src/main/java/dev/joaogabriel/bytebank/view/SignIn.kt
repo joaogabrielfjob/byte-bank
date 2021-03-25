@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import dev.joaogabriel.bytebank.R
 import dev.joaogabriel.bytebank.databinding.FragmentSignInBinding
 import dev.joaogabriel.bytebank.utils.Resource
+import dev.joaogabriel.bytebank.view.dialog.ForgotPassword
 import dev.joaogabriel.bytebank.viewmodel.UserViewModel
 
 class SignIn : Fragment(R.layout.fragment_sign_in) {
@@ -21,6 +22,7 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
 
         binding.signInBtnSignIn.setOnClickListener { signIn() }
         binding.signInBtnSignUp.setOnClickListener { openSignUp() }
+        binding.signInBtnForgotPassword.setOnClickListener { openDialogPassword() }
 
         userResponse()
     }
@@ -42,6 +44,10 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
         val password = binding.signInTxtPassword.text.toString()
 
         userViewModel.signIn(email, password)
+    }
+
+    private fun openDialogPassword() {
+        ForgotPassword().show(requireActivity().supportFragmentManager, "Forgot Password Dialog")
     }
 
     private fun openSignUp() {
