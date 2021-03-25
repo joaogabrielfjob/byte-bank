@@ -24,4 +24,7 @@
     <string name="txtValue">$ %1$.2f</string>
     <string name="txtNumberAccount">Nº da conta: %1d</string>
     <string name="date">%1d-%2s-%3d</string>
+
+    <!-- Dialog Forgot Password -->
+    <string name="btnGoBack">Voltar</string>
 </resources>
