@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/drawable/dialog_container_shape.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/drawable/home_container_shape.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/drawable/ic_add.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/drawable/ic_email.xml" value="0.3682051282051282" />
@@ -13,11 +14,13 @@
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/font/nunito_semibold.xml" value="0.33055555555555555" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/activity_main.xml" value="0.3578125" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_add_balance.xml" value="0.33796296296296297" />
+        <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_add_transaction.xml" value="0.33796296296296297" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_forgot_password.xml" value="0.3578125" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_home.xml" value="0.3578125" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_sign_up.xml" value="0.33796296296296297" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/fragment_splash.xml" value="0.22" />
+        <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/teste.xml" value="0.33796296296296297" />
         <entry key="..\:/Users/joao.gabriel/projects/byte-bank/android/app/src/main/res/layout/transactions_items.xml" value="0.3578125" />
       </map>
     </option>
