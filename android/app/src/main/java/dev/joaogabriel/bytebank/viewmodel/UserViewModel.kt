@@ -10,8 +10,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UserViewModel : ViewModel() {
-    private val userResponse: MutableLiveData<Resource<User>> = MutableLiveData()
     private val userRepository = UserRepository()
+    val userResponse: MutableLiveData<Resource<User>> = MutableLiveData()
 
     fun createUser(user: User) {
         CoroutineScope(Dispatchers.IO).launch {

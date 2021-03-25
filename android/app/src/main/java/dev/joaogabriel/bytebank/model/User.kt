@@ -6,5 +6,5 @@ data class User(
     var password: String,
     var name: String,
     var balance: Float,
-    var transactions: List<Transaction>
+    var transactions: List<Transaction>? = null
 )
