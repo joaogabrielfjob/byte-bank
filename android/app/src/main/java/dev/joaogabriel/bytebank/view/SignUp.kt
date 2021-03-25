@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import dev.joaogabriel.bytebank.R
 import dev.joaogabriel.bytebank.databinding.FragmentSignUpBinding
 import dev.joaogabriel.bytebank.model.User
@@ -20,6 +21,7 @@ class SignUp : Fragment(R.layout.fragment_sign_up) {
 
         binding = FragmentSignUpBinding.bind(view)
         binding.signUpBtnConfirm.setOnClickListener { createUser() }
+        binding.signUpBtnGoBack.setOnClickListener { openSignIn() }
 
         userResponse()
     }
@@ -27,7 +29,7 @@ class SignUp : Fragment(R.layout.fragment_sign_up) {
     private fun userResponse() {
         userViewModel.userResponse.observe(viewLifecycleOwner, { response ->
             when(response) {
-                is Resource.Success -> println(response.data)
+                is Resource.Success -> openHome()
 
                 is Resource.Error -> println(response.message)
 
@@ -48,5 +50,13 @@ class SignUp : Fragment(R.layout.fragment_sign_up) {
         val balance = binding.signUpTxtBalance.text.toString().toFloat()
 
         return User(accountNumber, email, password, name, balance)
+    }
+
+    private fun openSignIn() {
+        Navigation.findNavController(requireView()).navigate(R.id.signUpToSignIn)
+    }
+
+    private fun openHome() {
+        Navigation.findNavController(requireView()).navigate(R.id.signUpToHome)
     }
 }

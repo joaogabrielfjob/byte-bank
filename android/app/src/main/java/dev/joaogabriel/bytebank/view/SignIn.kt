@@ -30,7 +30,7 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
     private fun userResponse() {
         userViewModel.userResponse.observe(viewLifecycleOwner, { response ->
             when(response) {
-                is Resource.Success -> println(response.data)
+                is Resource.Success -> openHome()
 
                 is Resource.Error -> println(response.message)
 
@@ -52,5 +52,9 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
 
     private fun openSignUp() {
         Navigation.findNavController(requireView()).navigate(R.id.signInToSignUp)
+    }
+
+    private fun openHome() {
+        Navigation.findNavController(requireView()).navigate(R.id.signInToHome)
     }
 }
