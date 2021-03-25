@@ -43,4 +43,18 @@ class UserViewModel : ViewModel() {
             }
         }
     }
+
+    fun sendPasswordReset(email: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            userResponse.postValue(Resource.Loading())
+
+            try {
+                userRepository.sendPasswordReset(email)
+
+                userResponse.postValue(Resource.Success(null))
+            } catch (exception: Exception) {
+                userResponse.postValue(Resource.Error(exception.message.toString()))
+            }
+        }
+    }
 }
