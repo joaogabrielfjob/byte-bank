@@ -23,7 +23,21 @@ class UserViewModel : ViewModel() {
                     userRepository.createUserOnFireStore(this)
                 }
 
-                userResponse.postValue(Resource.Success(user))
+                userResponse.postValue(Resource.Success(null))
+            } catch (exception: Exception) {
+                userResponse.postValue(Resource.Error(exception.message.toString()))
+            }
+        }
+    }
+
+    fun signIn(email: String, password: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            userResponse.postValue(Resource.Loading())
+
+            try {
+                userRepository.signIn(email, password)
+
+                userResponse.postValue(Resource.Success(null))
             } catch (exception: Exception) {
                 userResponse.postValue(Resource.Error(exception.message.toString()))
             }

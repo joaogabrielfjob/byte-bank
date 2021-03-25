@@ -12,5 +12,7 @@ class UserRepository {
 
     suspend fun createUser(email: String, password: String): AuthResult = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
 
+    suspend fun signIn(email: String, password: String): AuthResult = firebaseAuth.signInWithEmailAndPassword(email, password).await()
+
     fun createUserOnFireStore(user: User) = firebaseFirestore.collection("users").document().set(user)
 }
