@@ -57,4 +57,24 @@ class UserViewModel : ViewModel() {
             }
         }
     }
+
+    fun getUserData() {
+        CoroutineScope(Dispatchers.IO).launch {
+            userResponse.postValue(Resource.Loading())
+
+            try {
+                val currentUser = userRepository.getCurrentUser()
+
+                println(currentUser)
+
+                if (currentUser != null && currentUser.email != null) {
+                    val user = userRepository.getUserData(currentUser.email!!).toObject(User::class.java)
+
+                    userResponse.postValue(Resource.Success(user))
+                }
+            } catch (exception: Exception) {
+                userResponse.postValue(Resource.Error(exception.message.toString()))
+            }
+        }
+    }
 }
