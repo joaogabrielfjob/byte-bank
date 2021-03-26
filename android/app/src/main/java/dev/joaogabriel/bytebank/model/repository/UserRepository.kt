@@ -23,4 +23,6 @@ class UserRepository {
     fun sendPasswordReset(email: String) = firebaseAuth.sendPasswordResetEmail(email)
 
     fun getCurrentUser(): FirebaseUser? = firebaseAuth.currentUser
+
+    fun addBalance(user: User) = firebaseFirestore.collection("users").document(user.email).update("balance", user.balance)
 }
