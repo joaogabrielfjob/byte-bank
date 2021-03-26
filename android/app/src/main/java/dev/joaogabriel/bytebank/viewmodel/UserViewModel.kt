@@ -95,8 +95,6 @@ class UserViewModel : ViewModel() {
 
     fun getUserTransactions(user: User) {
         CoroutineScope(Dispatchers.IO).launch {
-            userResponse.postValue(Resource.Loading())
-
             try {
                 val transactions = transactionRepository.getTransactions()
 
@@ -106,7 +104,6 @@ class UserViewModel : ViewModel() {
                     userResponse.postValue(Resource.Success(user))
                 }
             } catch (exception: Exception) {
-                println(exception)
                 userResponse.postValue(Resource.Error(exception.message.toString()))
             }
         }
@@ -114,15 +111,12 @@ class UserViewModel : ViewModel() {
 
     fun addTransaction(user: User, transaction: Transaction) {
         CoroutineScope(Dispatchers.IO).launch {
-            userResponse.postValue(Resource.Loading())
-
             try {
                 val response = transactionRepository.addTransaction(2000, transaction)
                 user.transactions?.add(response)
 
                 userResponse.postValue(Resource.Success(user))
             } catch (exception: Exception) {
-                println(exception)
                 userResponse.postValue(Resource.Error(exception.message.toString()))
             }
         }
