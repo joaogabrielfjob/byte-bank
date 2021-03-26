@@ -9,6 +9,7 @@ import dev.joaogabriel.bytebank.databinding.FragmentHomeBinding
 import dev.joaogabriel.bytebank.model.User
 import dev.joaogabriel.bytebank.utils.Resource
 import dev.joaogabriel.bytebank.view.dialog.AddBalance
+import dev.joaogabriel.bytebank.view.dialog.AddTransaction
 import dev.joaogabriel.bytebank.viewmodel.UserViewModel
 
 class Home : Fragment(R.layout.fragment_home) {
@@ -22,8 +23,10 @@ class Home : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
         binding.homeBtnAdd.setOnClickListener {  showAddOptions()  }
         binding.homeBtnAddBalance.setOnClickListener { openDialogBalance() }
+        binding.homeBtnAddTransaction.setOnClickListener { openDialogTransaction() }
 
         userViewModel.getUserData()
+
         userResponse()
     }
 
@@ -45,11 +48,17 @@ class Home : Fragment(R.layout.fragment_home) {
 
             binding.homeTxtName.text = user.name
             binding.homeTxtBalance.text = balance
+
+            userViewModel.getUserTransactions(user)
         }
     }
 
     private fun openDialogBalance() {
         AddBalance().show(requireActivity().supportFragmentManager, "Add Balance Dialog")
+    }
+
+    private fun openDialogTransaction() {
+        AddTransaction().show(requireActivity().supportFragmentManager, "Add Transaction Dialog")
     }
 
     private fun showAddOptions() {
