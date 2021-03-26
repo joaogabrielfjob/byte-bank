@@ -51,7 +51,7 @@ class AddBalance : DialogFragment() {
         val balance = binding.balanceTxtBalance.text.toString().toFloat()
         currentUser.balance += balance
 
-        userViewModel.addBalance(currentUser)
+        userViewModel.updateBalance(currentUser)
         dismiss()
     }
 }
