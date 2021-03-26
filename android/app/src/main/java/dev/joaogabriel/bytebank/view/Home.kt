@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import dev.joaogabriel.bytebank.R
 import dev.joaogabriel.bytebank.databinding.FragmentHomeBinding
 import dev.joaogabriel.bytebank.model.User
 import dev.joaogabriel.bytebank.utils.Resource
+import dev.joaogabriel.bytebank.view.adapter.TransactionAdapter
 import dev.joaogabriel.bytebank.view.dialog.AddBalance
 import dev.joaogabriel.bytebank.view.dialog.AddTransaction
 import dev.joaogabriel.bytebank.viewmodel.UserViewModel
@@ -50,6 +52,11 @@ class Home : Fragment(R.layout.fragment_home) {
             binding.homeTxtBalance.text = balance
 
             userViewModel.getUserTransactions(user)
+
+            if (user.transactions != null) {
+                binding.homeTransactions.adapter = TransactionAdapter(user.transactions!!, requireContext())
+                binding.homeTransactions.layoutManager = LinearLayoutManager(requireContext())
+            }
         }
     }
 
