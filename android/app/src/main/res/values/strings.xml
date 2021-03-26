@@ -22,8 +22,8 @@
     <!-- Transaction items -->
     <string name="txtValueTitle">Valor</string>
     <string name="txtValue">$ %1$.2f</string>
-    <string name="txtNumberAccount">Nº da conta: %1d</string>
-    <string name="date">%1d-%2s-%3d</string>
+    <string name="txtAccountNumber">Nº da conta: %1d</string>
+    <string name="date">%1s</string>
 
     <!-- Dialog Forgot Password -->
     <string name="btnGoBack">Voltar</string>
