@@ -121,4 +121,8 @@ class UserViewModel : ViewModel() {
             }
         }
     }
+
+    fun signOut() {
+        userRepository.signOut()
+    }
 }

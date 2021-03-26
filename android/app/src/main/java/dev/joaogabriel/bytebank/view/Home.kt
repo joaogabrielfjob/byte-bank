@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.joaogabriel.bytebank.R
 import dev.joaogabriel.bytebank.databinding.FragmentHomeBinding
@@ -26,6 +27,7 @@ class Home : Fragment(R.layout.fragment_home) {
         binding.homeBtnAdd.setOnClickListener {  showAddOptions()  }
         binding.homeBtnAddBalance.setOnClickListener { openDialogBalance() }
         binding.homeBtnAddTransaction.setOnClickListener { openDialogTransaction() }
+        binding.homeBtnSignOut.setOnClickListener { signOut() }
 
         userViewModel.getUserData()
 
@@ -58,6 +60,12 @@ class Home : Fragment(R.layout.fragment_home) {
                 binding.homeTransactions.layoutManager = LinearLayoutManager(requireContext())
             }
         }
+    }
+
+    private fun signOut() {
+        userViewModel.signOut()
+
+        Navigation.findNavController(requireView()).navigate(R.id.homeToSignIn)
     }
 
     private fun openDialogBalance() {

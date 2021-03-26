@@ -25,4 +25,6 @@ class UserRepository {
     fun getCurrentUser(): FirebaseUser? = firebaseAuth.currentUser
 
     fun addBalance(user: User) = firebaseFirestore.collection("users").document(user.email).update("balance", user.balance)
+
+    fun signOut() = firebaseAuth.signOut()
 }
