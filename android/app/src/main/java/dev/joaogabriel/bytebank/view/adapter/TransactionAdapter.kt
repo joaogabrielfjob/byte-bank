@@ -24,7 +24,7 @@ class TransactionAdapter(private val transactions: ArrayList<Transaction>, priva
             with(transactions[position]) {
                 val value = String.format(context.getString(R.string.txtValue), value)
                 val accountNumber = String.format(context.getString(R.string.txtAccountNumber), contact.accountNumber)
-                val dateFormat = dateTime.split(" ")[0]
+                val dateFormat = dateTime.replace("T", " ").split(" ")[0]
                 val date = String.format(context.getString(R.string.date), dateFormat)
 
                 binding.itemTxtValue.text = value
