@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import dev.joaogabriel.bytebank.R
@@ -52,13 +53,19 @@ class AddTransaction : DialogFragment() {
 
     private fun addTransaction() {
         val value = binding.transactionTxtValue.text.toString().toFloat()
-        val transaction = Transaction(
-            value,
-            Contact(currentUser.name, currentUser.accountNumber),
-            Date().toString()
-        )
 
-        userViewModel.addTransaction(currentUser, transaction)
+        if (currentUser.balance < value) {
+            Toast.makeText(requireContext(), "Saldo insuficiente", Toast.LENGTH_LONG).show()
+        } else {
+            val transaction = Transaction(
+                value,
+                Contact(currentUser.name, currentUser.accountNumber),
+                Date().toString()
+            )
+
+            userViewModel.addTransaction(currentUser, transaction)
+        }
+
         dismiss()
     }
 }
