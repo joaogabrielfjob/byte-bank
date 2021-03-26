@@ -13,6 +13,9 @@
         <action
             android:id="@+id/splashToSignIn"
             app:destination="@id/signIn" />
+        <action
+            android:id="@+id/splashToHome"
+            app:destination="@id/home2" />
     </fragment>
     <fragment
         android:id="@+id/signIn"
@@ -44,7 +47,7 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/homeToSIgnIn"
+            android:id="@+id/homeToSignIn"
             app:destination="@id/signIn" />
     </fragment>
 </navigation>
